@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grocery List</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>🛒 Grocery List</h2>
+    <p class="subtitle">Manage your shopping list with ease</p>
+    <p class="total">Total items to buy: <span id="total-count">0</span></p>
+
+    <div class="input-area">
+      <input type="text" id="item-input" placeholder="Enter grocery item..." />
+      <button id="add-btn"><span class="material-icons">add</span></button>
+    </div>
+
+    <div class="list" id="list"></div>
+
+    <p class="tip">Tip: Use the - and + buttons to adjust quantities, or the trash button to remove items</p>
+  </div>
+
+ <script src="index.js"></script>
+</body>
+</html>
