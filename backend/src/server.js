@@ -9,7 +9,7 @@ import basketRoutes from "./routes/basketRoutes.js";
 // DB Setup
 import { createUserTable } from "./data/createUserTable.js";
 import { createBasketItemsTable } from "./data/createBasketItemsTable.js";
-
+import {errorHandler,userValidator} from "./middleware/server.js";
 dotenv.config();
 
 const app = express();
@@ -22,10 +22,14 @@ app.use(express.json());
 createUserTable();
 createBasketItemsTable();
 
+app.use(userValidator);
+
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/basket", basketRoutes);
 
+
+app.use(errorHandler);
 // Root route
 app.get("/", (req, res) => {
   res.status(200).send("Hello World!");
